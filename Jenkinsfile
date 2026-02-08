@@ -18,20 +18,18 @@ pipeline {
                 sh '''
                 python3 -m venv $VENV || true
                 source $VENV/bin/activate
-                python -m pip install --upgrade pip
-                pip install -r requirements.txt
                 '''
             }
         }
 
-        stage('Migrate DB') {
-            steps {
-                sh '''
-                source $VENV/bin/activate
-                python manage.py migrate
-                '''
-            }
-        }
+        // stage('Migrate DB') {
+        //     steps {
+        //         sh '''
+        //         source $VENV/bin/activate
+        //         python manage.py migrate
+        //         '''
+        //     }
+        // }
 
         stage('Start Django') {
             steps {
