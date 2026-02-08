@@ -36,7 +36,7 @@ pipeline {
                 sh '''
                 source $VENV/bin/activate
                 pkill -f "manage.py runserver" || true
-                cd test
+                cd test/mysite
                 nohup python manage.py runserver 0.0.0.0:8000 &
                 '''
             }
