@@ -18,6 +18,7 @@ pipeline {
                 sh '''
                 python3 -m venv $VENV || true
                 source $VENV/bin/activate
+                pip install django
                 '''
             }
         }
